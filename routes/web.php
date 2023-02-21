@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -25,3 +25,9 @@ Route::get('/demo/{name}/{id?}',function($name,$id=null){
 Route::any('/test',function(){
     echo "Testing the route";
 });
+
+Route::get('/greeting', function () {
+    return 'This is the features of The Basic(Basic Routing)';
+});
+
+// Route::permanentRedirect('/test', '/greeting');
