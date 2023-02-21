@@ -18,8 +18,6 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/demo/{name}/{id?}',function($name,$id=null){
-    // echo "Hello ".$name."!<br>";
-    // echo "Your Id is: ".$id;
     $data = compact('name','id');
     return view('demo')->with($data);
 });
