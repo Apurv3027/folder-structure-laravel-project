@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,21 @@ Route::any('/test',function(){
 Route::get('/greeting', function () {
     return 'This is the features of The Basic(Basic Routing)';
 });
+
+// Route::get('/user/{id}', function (Request $request, $id) {
+//     return 'User '.$id;
+// });
+
+// Route::get('/user/{name}', function ($name) {
+//     return $name;
+// })->where('name', '[A-Za-z]+');
+
+// Route::get('/user/{id}', function ($id) {
+//     return $id;
+// })->where('id', '[0-9]+');
+ 
+Route::get('/user/{id}/{name}', function ($id, $name) {
+    return 'User Name:'.$name.' User Name:'.$id;
+})->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
 
 // Route::permanentRedirect('/test', '/greeting');
