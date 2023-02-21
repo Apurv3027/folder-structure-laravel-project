@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use App\Http\Controllers\TestingController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,10 +43,12 @@ Route::get('/greeting', function () {
 //     return $id;
 // })->where('id', '[0-9]+');
  
-Route::get('/user/{id}/{name}', function ($id, $name) {
-    return 'User Name:'.$name.' User Name:'.$id;
-})->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
+// Route::get('/user/{id}/{name}', function ($id, $name) {
+//     return 'User Name:'.$name.' User Name:'.$id;
+// })->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
 
 Route::get('testing/{id}/{name}',[TestingController::class,'index']);
 
 // Route::permanentRedirect('/test', '/greeting');
+
+// Route::get('/guest/{name}', [UserController::class,'show']);
