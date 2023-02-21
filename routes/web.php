@@ -27,8 +27,3 @@ Route::get('/demo/{name}/{id?}',function($name,$id=null){
 Route::any('/test',function(){
     echo "Testing the route";
 });
-
-Route::get('/home/{name?}',function($name = null){
-    $data = compact('name');
-    return view('home')->with($data);
-});
