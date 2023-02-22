@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestingOneController;
+use App\Http\Controllers\DemoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,5 @@ Route::post('testingone/store', [TestingOneController::class, 'store']);
 Route::get('testingone/edit/{id}', [TestingOneController::class, 'edit']);
 Route::post('testingone/update/{id}', [TestingOneController::class, 'update']);
 Route::delete('testingone/delete/{id}', [TestingOneController::class, 'destroy']);
+
+Route::get('democontroller', DemoController::class);
