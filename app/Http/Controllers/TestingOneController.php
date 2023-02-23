@@ -30,6 +30,7 @@ class TestingOneController extends Controller
     public function store(Request $request): RedirectResponse
     {
         dd($request->toarray());
+        $name = $request->input('name');
     }
 
     /**
