@@ -8,7 +8,23 @@
 </head>
 <body>
     <center>
-        <h1>Hello World!</h1>
+        <h1>Hello {{ $name }}!</h1>
+        <h1>Hello, {!! $name !!}.</h1>
+        <h2>The current UNIX timestamp is {{ time() }}.</h2>
+        @unless (Auth::check())
+            You are not signed in.
+        @endunless
+
+        <button type="submit" @disabled($errors->isNotEmpty())>Submit</button>
+        <br>
+        @php
+            echo "Current Url: ".url()->current();
+            echo "<br>";
+            echo "Full Url: ".url()->full();
+            echo "<br>";
+            echo "Previous Url: ".url()->previous();
+        @endphp
+
     </center>
 </body>
 </html>

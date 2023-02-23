@@ -18,7 +18,7 @@ use App\Http\Controllers\DemoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['name' => 'ABC']);
 });
 
 Route::get('/demo/{name}/{id?}',function($name,$id=null){
@@ -27,8 +27,9 @@ Route::get('/demo/{name}/{id?}',function($name,$id=null){
 });
 
 Route::any('/test',function(){
+    return view('test');
     echo "Testing the route";
-});
+})->name('test');
 
 Route::get('/greeting', function () {
     return 'This is the features of The Basic(Basic Routing)';
